@@ -63,7 +63,7 @@ return [
     |
     */
 
-    'logo' => '<b>Admin</b>LTE',
+    'logo' => '<b>ADM RRHH</b>',
     'logo_img' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
     'logo_img_class' => 'brand-image img-circle elevation-3',
     'logo_img_xl' => null,
@@ -294,45 +294,42 @@ return [
         [
             'type'         => 'navbar-search',
             'text'         => 'search',
-            'topnav_right' => true,
+            'topnav_right' => false,
         ],
         [
             'type'         => 'fullscreen-widget',
-            'topnav_right' => true,
+            'topnav_right' => false,
         ],
 
         // Sidebar items:
-        [
+        /* [
             'type' => 'sidebar-menu-search',
             'text' => 'search',
-        ],
+        ], */
         [
             'text' => 'blog',
             'url'  => 'admin/blog',
             'can'  => 'manage-blog',
         ],
+        ['header' => 'Configuraciones'],
+       
+      
         [
-            'text'        => 'pages',
-            'url'         => 'admin/pages',
-            'icon'        => 'far fa-fw fa-file',
-            'label'       => 4,
-            'label_color' => 'success',
-        ],
-        ['header' => 'account_settings'],
-        [
-            'text' => 'profile',
-            'url'  => 'admin/settings',
-            'icon' => 'fas fa-fw fa-user',
-        ],
-        [
-            'text' => 'change_password',
-            'url'  => 'admin/settings',
-            'icon' => 'fas fa-fw fa-lock',
-        ],
-        [
-            'text'    => 'multilevel',
-            'icon'    => 'fas fa-fw fa-share',
+            'text'    => 'USUARIO',
+            'icon'    => 'fas fa-fw fa-users',
             'submenu' => [
+                
+                [
+                    'text' => 'Administradores',
+                    'url'  => 'users',
+                    'icon' => 'fas fa-fw fa-user',
+                ],
+                
+                [
+                    'text' => 'Empleados',
+                    'url'  => 'empleado',
+                    'icon' => 'fas fa-fw fa-user',
+                ],
                 [
                     'text' => 'level_one',
                     'url'  => '#',
@@ -361,6 +358,7 @@ return [
                         ],
                     ],
                 ],
+                
                 [
                     'text' => 'level_one',
                     'url'  => '#',
