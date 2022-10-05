@@ -16,7 +16,6 @@ class CreateInformesTable extends Migration
         Schema::create('informes', function (Blueprint $table) {
             $table->id();
             $table->string('description')->nullable();
-            $table->date('date');
             $table->string('path')->nullable();
             $table->unsignedBigInteger('cliente_servicio_id');
             $table->foreign('cliente_servicio_id')->references('id')->on('cliente_servicio')->onUpdate('cascade')->onDelete('cascade');

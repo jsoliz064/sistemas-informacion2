@@ -19,6 +19,7 @@ class ClienteController extends Controller
             $cliente_id=Auth()->user()->Cliente->id;
             $cliente_servicios = ClienteServicio::where('cliente_id',$cliente_id)
             ->where('finished',false)
+            ->orderBy('id', 'DESC')
             ->get();
         }else{
             $cliente_servicios = ClienteServicio::all();
@@ -37,6 +38,7 @@ class ClienteController extends Controller
         if (Auth()->user()->Cliente==null){
             return redirect()->route('cliente.servicio');
         }
+        date_default_timezone_set("America/La_Paz");
         $cliente_id=Auth()->user()->Cliente->id;
         ClienteServicio::create([
             'servicio_id' =>$request->servicio_id,

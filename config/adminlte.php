@@ -338,23 +338,37 @@ return [
                
             ],
         ],
+        [
+            'text'    => 'ADMINISTRAR',
+            'icon'    => 'fas fa-fw fa-users',
+            'can'  =>'admin',
+            'submenu' => [
+                [
+                    'text' => 'Servicios',
+                    'route'  => 'servicio.index',
+                    'icon' => 'fas fa-fw fa-user',
+                ],
+                [
+                    'text' => 'Areas de servicios',
+                    'route'  => 'area.index',
+                    'icon' => 'fas fa-fw fa-user',
+                ],
+               
+            ],
+        ],
 
-        [
-            'text' => 'Servicios',
-            'route'  => 'servicio.index',
-            'can'  =>'admin',
-            'icon' => 'fas fa-fw fa-user',
-        ],
-        [
-            'text' => 'Areas de servicios',
-            'route'  => 'area.index',
-            'can'  =>'admin',
-            'icon' => 'fas fa-fw fa-user',
-        ],
+       
         [
             'text' => 'Servicios solicitados',
             'route'  => 'solicitudes.index',
             'can'  =>'empleado',
+            'icon' => 'fas fa-fw fa-user',
+        ],
+        
+        [
+            'text' => 'Solicitar Servicio',
+            'route'  => 'cliente.servicio',
+            'can'  =>'cliente',
             'icon' => 'fas fa-fw fa-user',
         ],
         [
@@ -364,9 +378,15 @@ return [
             'icon' => 'fas fa-fw fa-user',
         ],
         [
-            'text' => 'Solicitar Servicio',
-            'route'  => 'cliente.servicio',
-            'can'  =>'cliente',
+            'text' => 'Asistencias',
+            'route'  => 'asistencia.index',
+            'can'  =>'admin',
+            'icon' => 'fas fa-fw fa-user',
+        ],
+        [
+            'text' => 'Reporte de Asistencias',
+            'route'  => 'asistencia.reporte',
+            'can'  =>'admin',
             'icon' => 'fas fa-fw fa-user',
         ],
         

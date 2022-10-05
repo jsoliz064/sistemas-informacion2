@@ -4,6 +4,8 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Asistencia;
+use Carbon\Carbon;
 
 class Empleado extends Model
 {
@@ -15,4 +17,5 @@ class Empleado extends Model
     {
         return  $this->belongsTo('App\Models\User');
     }
+    
 }

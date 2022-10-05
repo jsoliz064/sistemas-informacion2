@@ -50,7 +50,7 @@
                                 <th scope="col">Fecha de Solicitud</th>
                                 <th scope="col">Estado</th>
                                 <th scope="col">Terminado</th>
-                                <th scope="col" width="15%">Acciones</th>
+                                <th scope="col" width="30%">Acciones</th>
                             </tr>
                         </thead>
 
@@ -69,11 +69,10 @@
                                     <td>@if ($cliente_servicio->finished) Terminado @else En ejecución @endif </td>
                                     <td class="d-flex justify-content-center">
                                         @can('empleado')
-                                            <button wire:click="modalDestroy('{{ $cliente_servicio->id }}')"
-                                            class="btn btn-success btn-sm">Ver Detalle</button>
+                                            <a class="btn btn-success btn-sm" href="{{route('solicitudes.show',$cliente_servicio)}}">Ver Detalle</a>
                                         @endcan
                                         @can('admin')
-                                            <a class="btn btn-info btn-sm mx-2" wire:click="modalEdit('{{ $cliente_servicio->id }}')"><i class="fas fa-pen"></i></a>
+                                            <a class="btn btn-info btn-sm mx-2" wire:click="modalEdit('{{ $cliente_servicio->id }}')">Asignar Empleado</a>
                                             <button wire:click="modalDestroy('{{ $cliente_servicio->id }}')"
                                                 class="btn btn-danger btn-sm"><i class="fas fa-trash-alt"></i></button>
                                         @endcan

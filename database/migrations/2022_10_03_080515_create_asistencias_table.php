@@ -15,10 +15,13 @@ class CreateAsistenciasTable extends Migration
     {
         Schema::create('asistencias', function (Blueprint $table) {
             $table->id();
-            $table->string('description')->nullable();
-            $table->boolean('type')->default(true);
-            $table->unsignedBigInteger('cliente_servicio_id');
-            $table->foreign('cliente_servicio_id')->references('id')->on('cliente_servicio')->onUpdate('cascade')->onDelete('cascade');
+            $table->timestamp('begin')->nullable();
+            $table->timestamp('end')->nullable();
+            $table->boolean('type')->default(false);
+            $table->string('longitud')->nullable();
+            $table->string('latitud')->nullable();
+            $table->unsignedBigInteger('empleado_id');
+            $table->foreign('empleado_id')->references('id')->on('empleados')->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();
         });
     }

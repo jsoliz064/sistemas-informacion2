@@ -10,6 +10,10 @@ use App\Http\Controllers\ServicioController;
 use App\Http\Controllers\ClienteServicioController;
 use App\Http\Controllers\AreaController;
 use App\Http\Controllers\PagoController;
+use App\Http\Controllers\InformeController;
+use App\Http\Controllers\AsistenciaController;
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -48,6 +52,14 @@ Route::get('areas',[AreaController::class,'index'])->name('area.index');
 Route::get('servicios',[ServicioController::class,'index'])->name('servicio.index');
 Route::get('pagos',[PagoController::class,'index'])->name('pago.index');
 Route::get('solicitudes',[ClienteServicioController::class,'index'])->name('solicitudes.index');
+Route::get('solicitudes/show/{cliente_servicio}',[ClienteServicioController::class,'show'])->name('solicitudes.show');
+Route::post('informe/store/{cliente_servicio}',[InformeController::class,'store'])->name('informe.store');
+Route::get('asistencias',[AsistenciaController::class,'index'])->name('asistencia.index');
+Route::get('asistencias/reporte',[AsistenciaController::class,'reporte'])->name('asistencia.reporte');
+
+
+
+
 
 
 

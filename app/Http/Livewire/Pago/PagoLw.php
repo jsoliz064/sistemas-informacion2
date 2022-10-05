@@ -44,6 +44,7 @@ class PagoLw extends Component
             'pago.amount'=>'required',
             'pago.empleado_id'=>'required',
         ]);
+        date_default_timezone_set("America/La_Paz");
         Pago::create($this->pago);
         $this->limpiar();
     }

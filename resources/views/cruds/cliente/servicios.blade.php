@@ -34,7 +34,7 @@
                     <input id="longitud" name="longitud" style="display:none" type="text">
                     <input id="latitud" name="latitud" style="display:none" type="text">
                     <div align="center" class="my-4">
-                        <button class="btn btn-primary btn-lg" style="background: white; color:rgb(64, 145, 250);"
+                        <button class="btn btn-primary btn-lg" style="background: white; color:rgb(0, 13, 71);"
                             type="submit">Solicitar</button>
                     </div>
                 </form>
