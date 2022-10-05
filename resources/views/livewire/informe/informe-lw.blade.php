@@ -63,7 +63,7 @@
                                     <td>{{ $informe->id }}</td>
                                     <td>{{ $informe->description }}</td>
                                     <td>{{ $informe->created_at }}</td>
-                                    <td><a href="public{{ $informe->path }}">{{ $informe->path }}</a></td>
+                                    <td><a href="https://supportficct.ga/sistemas-informacion2/public{{ $informe->path }}">{{ $informe->path }}</a></td>
                                     <td>
                                         <button wire:click="modalDestroy('{{ $informe->id }}')"
                                             class="btn btn-danger btn-sm"><i class="fas fa-trash-alt"></i></button>
