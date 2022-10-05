@@ -48,14 +48,14 @@ class EmpleadoLw extends Component
         }
         $this->user['email']=$this->email;
         $this->user['password']=Hash::make($this->user['password']);
-        $user=User::create($this->user);
+        $user=User::create($this->user)->assignRole(2);
 
         Empleado::create([
             'name' => $user->name,
             'ci' => $this->user['ci'],
             'phone' =>$this->user['phone'],
             'user_id' => $user->id,
-        ])->assignRole(2);
+        ]);
 
         $this->limpiar();
     }
