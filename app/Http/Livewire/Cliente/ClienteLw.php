@@ -56,7 +56,7 @@ class ClienteLw extends Component
             'ci' => $this->user['ci'],
             'phone' =>$this->user['phone'],
             'user_id' => $user->id,
-        ])->assignRole($this->user['rol_id']);
+        ])->assignRole(3);
 
         $this->limpiar();
     }
