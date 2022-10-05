@@ -1,0 +1,15 @@
+<?php return array (
+  'area.area-lw' => 'App\\Http\\Livewire\\Area\\AreaLw',
+  'asistencia.asistencia-lw' => 'App\\Http\\Livewire\\Asistencia\\AsistenciaLw',
+  'asistencia.reporte-lw' => 'App\\Http\\Livewire\\Asistencia\\ReporteLw',
+  'cliente-servicio.cliente-servicio-lw' => 'App\\Http\\Livewire\\ClienteServicio\\ClienteServicioLw',
+  'cliente-servicio.show-lw' => 'App\\Http\\Livewire\\ClienteServicio\\ShowLw',
+  'cliente.cliente-lw' => 'App\\Http\\Livewire\\Cliente\\ClienteLw',
+  'cliente.servicio-lw' => 'App\\Http\\Livewire\\Cliente\\ServicioLw',
+  'empleado.empleado-lw' => 'App\\Http\\Livewire\\Empleado\\EmpleadoLw',
+  'informe.informe-lw' => 'App\\Http\\Livewire\\Informe\\InformeLw',
+  'pago.pago-lw' => 'App\\Http\\Livewire\\Pago\\PagoLw',
+  'servicio.servicio-lw' => 'App\\Http\\Livewire\\Servicio\\ServicioLw',
+  'user.rol-lw' => 'App\\Http\\Livewire\\User\\RolLw',
+  'user.user-lw' => 'App\\Http\\Livewire\\User\\UserLw',
+);
