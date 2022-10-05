@@ -4,6 +4,10 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\EmpleadoController;
+use App\Http\Controllers\RolController;
+use App\Http\Controllers\ClienteController;
+use App\Http\Controllers\ServicioController;
+use App\Http\Controllers\AreaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,7 +26,23 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::middleware(['auth:sanctum', 'verified'])->group(function () {
+    Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+    Route::group(['prefix'=> 'users'], function () {
+        Route::get('index',[UserController::class,'users'])->name('users.index');
+        Route::get('roles',[RolController::class,'index'])->name('roles.index');
+        Route::get('permisos',[RolController::class,'permisos'])->name('permisos.index');
+
+    });
+});
+
 Route::get('users',[UserController::class,'index'])->name('user.index');
-Route::get('empleado',[EmpleadoController::class,'index'])->name('empleado.index');
+Route::get('empleados',[EmpleadoController::class,'index'])->name('empleado.index');
+Route::get('clientes',[ClienteController::class,'index'])->name('cliente.index');
+Route::get('clientesServicios',[ClienteController::class,'servicio'])->name('cliente.servicio');
+
+Route::get('areas',[AreaController::class,'index'])->name('area.index');
+Route::get('servicios',[ServicioController::class,'index'])->name('servicio.index');
+
+
 

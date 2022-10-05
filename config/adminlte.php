@@ -192,7 +192,7 @@ return [
     'classes_content_wrapper' => '',
     'classes_content_header' => '',
     'classes_content' => '',
-    'classes_sidebar' => 'sidebar-dark-primary elevation-4',
+    'classes_sidebar' => 'sidebar-light-primary elevation-4',
     'classes_sidebar_nav' => '',
     'classes_topnav' => 'navbar-white navbar-light',
     'classes_topnav_nav' => 'navbar-expand',
@@ -313,7 +313,7 @@ return [
         ],
         ['header' => 'Configuraciones'],
        
-      
+        
         [
             'text'    => 'USUARIO',
             'icon'    => 'fas fa-fw fa-users',
@@ -321,66 +321,40 @@ return [
                 
                 [
                     'text' => 'Administradores',
-                    'url'  => 'users',
+                    'route'  => 'user.index',
                     'icon' => 'fas fa-fw fa-user',
                 ],
                 
                 [
                     'text' => 'Empleados',
-                    'url'  => 'empleado',
+                    'route'  => 'empleado.index',
                     'icon' => 'fas fa-fw fa-user',
                 ],
                 [
-                    'text' => 'level_one',
-                    'url'  => '#',
+                    'text' => 'Clientes',
+                    'route'  => 'cliente.index',
+                    'icon' => 'fas fa-fw fa-user',
                 ],
-                [
-                    'text'    => 'level_one',
-                    'url'     => '#',
-                    'submenu' => [
-                        [
-                            'text' => 'level_two',
-                            'url'  => '#',
-                        ],
-                        [
-                            'text'    => 'level_two',
-                            'url'     => '#',
-                            'submenu' => [
-                                [
-                                    'text' => 'level_three',
-                                    'url'  => '#',
-                                ],
-                                [
-                                    'text' => 'level_three',
-                                    'url'  => '#',
-                                ],
-                            ],
-                        ],
-                    ],
-                ],
-                
-                [
-                    'text' => 'level_one',
-                    'url'  => '#',
-                ],
+               
             ],
         ],
-        ['header' => 'labels'],
+
         [
-            'text'       => 'important',
-            'icon_color' => 'red',
-            'url'        => '#',
+            'text' => 'Servicios',
+            'route'  => 'servicio.index',
+            'icon' => 'fas fa-fw fa-user',
         ],
         [
-            'text'       => 'warning',
-            'icon_color' => 'yellow',
-            'url'        => '#',
+            'text' => 'Areas de servicios',
+            'route'  => 'area.index',
+            'icon' => 'fas fa-fw fa-user',
         ],
         [
-            'text'       => 'information',
-            'icon_color' => 'cyan',
-            'url'        => '#',
+            'text' => 'Solicitar Servicio',
+            'route'  => 'cliente.servicio',
+            'icon' => 'fas fa-fw fa-user',
         ],
+        
     ],
 
     /*

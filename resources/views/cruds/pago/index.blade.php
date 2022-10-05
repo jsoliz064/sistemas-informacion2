@@ -1,19 +1,15 @@
 @extends('adminlte::page')
 
-@section('title', 'Users')
-
-@section('content_header')
-    
-@stop
+@section('title', 'Pagos')
 
 @section('content')
-<h1>EMPLEADO</h1>
+    @livewire('pago.pago-lw')
 @stop
 
 @section('css')
-
+    @livewireStyles
 @stop
 
 @section('js')
-
+    @livewireScripts
 @stop
