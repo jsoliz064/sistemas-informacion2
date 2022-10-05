@@ -150,8 +150,8 @@ return [
 
     'layout_topnav' => null,
     'layout_boxed' => null,
-    'layout_fixed_sidebar' => null,
-    'layout_fixed_navbar' => null,
+    'layout_fixed_sidebar' => true,
+    'layout_fixed_navbar' => true,
     'layout_fixed_footer' => null,
     'layout_dark_mode' => null,
 
@@ -311,12 +311,12 @@ return [
             'url'  => 'admin/blog',
             'can'  => 'manage-blog',
         ],
-        ['header' => 'Configuraciones'],
+        ['header' => 'Gestionar'],
        
-        
         [
-            'text'    => 'USUARIO',
+            'text'    => 'USUARIOS',
             'icon'    => 'fas fa-fw fa-users',
+            'can'  =>'admin',
             'submenu' => [
                 
                 [
@@ -342,16 +342,31 @@ return [
         [
             'text' => 'Servicios',
             'route'  => 'servicio.index',
+            'can'  =>'admin',
             'icon' => 'fas fa-fw fa-user',
         ],
         [
             'text' => 'Areas de servicios',
             'route'  => 'area.index',
+            'can'  =>'admin',
+            'icon' => 'fas fa-fw fa-user',
+        ],
+        [
+            'text' => 'Servicios solicitados',
+            'route'  => 'solicitudes.index',
+            'can'  =>'empleado',
+            'icon' => 'fas fa-fw fa-user',
+        ],
+        [
+            'text' => 'Pagos',
+            'route'  => 'pago.index',
+            'can'  =>'empleado',
             'icon' => 'fas fa-fw fa-user',
         ],
         [
             'text' => 'Solicitar Servicio',
             'route'  => 'cliente.servicio',
+            'can'  =>'cliente',
             'icon' => 'fas fa-fw fa-user',
         ],
         

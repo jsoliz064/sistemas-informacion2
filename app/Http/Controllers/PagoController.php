@@ -6,5 +6,7 @@ use Illuminate\Http\Request;
 
 class PagoController extends Controller
 {
-    //
+    public function index(){
+        return view('cruds.pago.index');
+    }
 }

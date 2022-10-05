@@ -12,7 +12,7 @@ class ServicioLw extends Component
     use WithPagination;
     public $search = "";
     public $cant = 10;
-    public $servicio=[];
+    public $clienteservicio=[];
     public $ordenar='desc';
 
     public $modalDestroy=false;
@@ -36,8 +36,7 @@ class ServicioLw extends Component
         $servicios=Servicio::all();
         $latitude=-17.784514812703144;
         $longitude=-63.18003610135552;
-        $markers=array();
-        return view('livewire.cliente.servicio-lw',compact('cliente_servicios','servicios','latitude','longitude','markers'));
+        return view('livewire.cliente.servicio-lw',compact('cliente_servicios','servicios','latitude','longitude'));
     }
     
     public function crear(){
