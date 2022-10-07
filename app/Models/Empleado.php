@@ -17,5 +17,9 @@ class Empleado extends Model
     {
         return  $this->belongsTo('App\Models\User');
     }
+    public function Area()
+    {
+        return  $this->belongsTo('App\Models\Area');
+    }
     
 }

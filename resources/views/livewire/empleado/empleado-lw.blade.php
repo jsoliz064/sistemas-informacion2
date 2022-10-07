@@ -55,6 +55,7 @@
                                 <th scope="col">CI</th>
                                 <th scope="col">Telefono</th>
                                 <th scope="col">Email</th>
+                                <th scope="col">Area</th>
                                 <th scope="col" width="15%">Acciones</th>
                             </tr>
                         </thead>
@@ -68,6 +69,8 @@
                                     <td>{{ $empleado->ci }}</td>
                                     <td>{{ $empleado->phone }}</td>
                                     <td>{{ $empleado->User->email }}</td>
+                                    <td>@if ($empleado->area_id) {{ $empleado->Area->name }} @else sin area @endif</td>
+
                                     <td class="d-flex justify-content-center">
                                         <a class="btn btn-info btn-sm mx-2" wire:click="modalEdit('{{ $empleado->id }}')"><i class="fas fa-pen"></i></a>
                                         <button wire:click="modalDestroy('{{ $empleado->id }}')"
