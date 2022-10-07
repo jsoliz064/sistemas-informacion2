@@ -44,7 +44,10 @@
                             <tr>
                                 <th scope="col">ID</th>
                                 <th scope="col">Descripcion</th>
-                                <th scope="col">Monto</th>
+                                <th scope="col">Sueldo</th>
+                                <th scope="col">Bono</th>
+                                <th scope="col">Descuento</th>
+                                <th scope="col">Total</th>
                                 <th scope="col">Fecha</th>
                                 @can('admin')
                                     <th scope="col">Empleado</th>
@@ -60,6 +63,9 @@
                                     <td>{{ $pago->id }}</td>
                                     <td>{{ $pago->description }}</td>
                                     <td>{{ $pago->amount }}</td>
+                                    <td>{{ $pago->bonoamount }}</td>
+                                    <td>{{ $pago->descuentoamount }}</td>
+                                    <td>{{ $pago->total }}</td>
                                     <td>{{ $pago->created_at }}</td>
                                     @can('admin')
                                         <td>{{ $pago->Empleado->name }}</td>
@@ -124,6 +130,36 @@
                                     <small class="text-danger">Campo Requerido</small>
                                 @enderror
 
+                                <button class="btn" wire:click="bono()"><i class="fas fa-plus"></i>Agregar Bono</button>
+                                @if ($this->bono)
+                                    <h5>Descripcion del bono:</h5>
+                                    <input type="text" wire:model="pago.bono" class="form-control">
+                                    @error('pago.bono')
+                                        <small class="text-danger">Campo Requerido</small>
+                                    @enderror
+
+                                    <h5>Monto:</h5>
+                                    <input type="number" wire:model="pago.bonoamount" class="form-control">
+                                    @error('pago.bonoamount')
+                                        <small class="text-danger">Campo Requerido</small>
+                                    @enderror
+                                @endif
+                                <button class="btn" wire:click="descuento()"><i class="fas fa-plus"></i>Agregar Descuento</button>
+                                @if ($this->descuento)
+                                    <h5>Descripcion del descuento:</h5>
+                                    <input type="text" wire:model="pago.descuento" class="form-control">
+                                    @error('pago.descuento')
+                                        <small class="text-danger">Campo Requerido</small>
+                                    @enderror
+
+                                    <h5>Monto:</h5>
+                                    <input type="number" wire:model="pago.descuentoamount" class="form-control">
+                                    @error('pago.descuentoamount')
+                                        <small class="text-danger">Campo Requerido</small>
+                                    @enderror
+                                @endif
+
+
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" wire:click="cancelar()">Cancelar</button>
@@ -164,6 +200,30 @@
                                 @endforeach
                                 </select>
                                 @error('pago.empleado_id')
+                                    <small class="text-danger">Campo Requerido</small>
+                                @enderror
+
+                                <h5>Descripcion del bono:</h5>
+                                <input type="text" wire:model="pago.bono" class="form-control">
+                                @error('pago.bono')
+                                    <small class="text-danger">Campo Requerido</small>
+                                @enderror
+
+                                <h5>Monto:</h5>
+                                <input type="number" wire:model="pago.bonoamount" class="form-control">
+                                @error('pago.bonoamount')
+                                    <small class="text-danger">Campo Requerido</small>
+                                @enderror
+                             
+                                <h5>Descripcion del descuento:</h5>
+                                <input type="text" wire:model="pago.descuento" class="form-control">
+                                @error('pago.descuento')
+                                    <small class="text-danger">Campo Requerido</small>
+                                @enderror
+
+                                <h5>Monto:</h5>
+                                <input type="number" wire:model="pago.descuentoamount" class="form-control">
+                                @error('pago.descuentoamount')
                                     <small class="text-danger">Campo Requerido</small>
                                 @enderror
                         </div>

@@ -55,7 +55,7 @@ return [
     */
 
     //'asset_url' => null,
-    'asset_url' => "https://supportficct.ga/sistemas-informacion2/public",
+    'asset_url' => "http://144.22.174.111/sistemas-informacion2/public",
 
 
     /*

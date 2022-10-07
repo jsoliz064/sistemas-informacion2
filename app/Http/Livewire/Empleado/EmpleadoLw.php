@@ -5,6 +5,7 @@ namespace App\Http\Livewire\Empleado;
 use Livewire\Component;
 use App\Models\Empleado;
 use App\Models\User;
+use App\Models\Area;
 use Livewire\WithPagination;
 use Illuminate\Support\Facades\Hash;
 
@@ -26,7 +27,8 @@ class EmpleadoLw extends Component
         $empleados = Empleado::where('name', 'like', '%' . $this->search . '%')
         ->orderBy('id', $this->ordenar)
         ->simplePaginate($this->cant);
-        return view('livewire.empleado.empleado-lw',compact('empleados'));
+        $areas= Area::all();
+        return view('livewire.empleado.empleado-lw',compact('empleados','areas'));
     }
     public function crear(){
         $this->modalCrear=true;
@@ -40,6 +42,7 @@ class EmpleadoLw extends Component
             'user.phone'=>'required|string|max:20',
             'email'=>'required|string|max:255|email|unique:users',
             'user.password'=>'required|string|min:4',
+            'user.area_id'=>'required'
         ]);
         if ($this->user['password']!==$this->user['cpassword']){
             $this->validate([
@@ -55,6 +58,7 @@ class EmpleadoLw extends Component
             'ci' => $this->user['ci'],
             'phone' =>$this->user['phone'],
             'user_id' => $user->id,
+            'area_id'=>$this->user['area_id'],
         ]);
 
         $this->limpiar();
@@ -70,6 +74,7 @@ class EmpleadoLw extends Component
         $this->email=$this->user['email'];
         $this->user['phone']=$empleado->phone;
         $this->user['ci']=$empleado->ci;
+        $this->user['area_id']=$empleado->area_id;
         $this->user['password']="";
         $this->user['cpassword']="";
         //$this->user['rol_id']=2;
@@ -80,6 +85,7 @@ class EmpleadoLw extends Component
             'user.name'=>'required|string|max:255',
             'user.ci'=>'required|string|max:20',
             'user.phone'=>'required|string|max:20',
+            'user.area_id'=>'required'
         ]);
         $empleado=Empleado::find($this->empleado_id);
         $user=User::find($this->user['id']);
@@ -110,6 +116,7 @@ class EmpleadoLw extends Component
         $empleado->name=$this->user['name'];
         $empleado->ci=$this->user['ci'];
         $empleado->phone=$this->user['phone'];
+        $empleado->area_id=$this->user['area_id'];
         $empleado->save();
 
         $this->limpiar();

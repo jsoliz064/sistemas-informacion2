@@ -17,6 +17,11 @@ class CreatePagosTable extends Migration
             $table->id();
             $table->string('description')->nullable();
             $table->decimal('amount',12,2)->default(0);
+            $table->string('bono')->nullable();
+            $table->decimal('bonoamount',12,2)->default(0);
+            $table->string('descuento')->nullable();
+            $table->decimal('descuentoamount',12,2)->default(0);
+            $table->decimal('total',12,2)->default(0);
             $table->unsignedBigInteger('empleado_id');
             $table->foreign('empleado_id')->references('id')->on('empleados')->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();

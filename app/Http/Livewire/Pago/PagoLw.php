@@ -20,6 +20,10 @@ class PagoLw extends Component
     public $modalEdit=false;
     public $modalCrear=false;
 
+    public $bono=false;
+    public $descuento=false;
+
+
     public function render()
     {
         $user=User::find(Auth()->user()->id);
@@ -36,6 +40,16 @@ class PagoLw extends Component
     }
     public function crear(){
         $this->modalCrear=true;
+        $this->pago['amount']=0;
+        $this->pago['bonoamount']=0;
+        $this->pago['descuentoamount']=0;
+
+    }
+    public function bono(){
+        $this->bono=true;
+    }
+    public function descuento(){
+        $this->descuento=true;
     }
     public function store()
     {
@@ -45,7 +59,21 @@ class PagoLw extends Component
             'pago.empleado_id'=>'required',
         ]);
         date_default_timezone_set("America/La_Paz");
-        Pago::create($this->pago);
+        
+        $pago=Pago::create($this->pago);
+        $total=0;
+        if ( $this->pago['amount']){
+            $total+= $this->pago['amount'];
+        }
+        if ( $this->pago['bonoamount']){
+            $total+= $this->pago['bonoamount'];
+        }
+        if ( $this->pago['descuentoamount']){
+            $total+= $this->pago['descuentoamount'];
+        }
+        $pago->update([
+            'total' => $total
+        ]);
         $this->limpiar();
     }
     
@@ -68,6 +96,13 @@ class PagoLw extends Component
         $pago->description=$this->pago['description'];
         $pago->amount=$this->pago['amount'];
         $pago->empleado_id=$this->pago['empleado_id'];
+        $pago->bono=$this->pago['bono'];
+        $pago->bonoamount=$this->pago['bonoamount'];
+        $pago->descuento=$this->pago['descuento'];
+        $pago->descuentoamount=$this->pago['descuentoamount'];
+        $pago->update([
+            'total' => $this->pago['amount']+$this->pago['bonoamount']+$this->pago['descuentoamount']
+        ]);
         $pago->save();
 
         $this->limpiar();
