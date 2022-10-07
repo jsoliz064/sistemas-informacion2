@@ -205,16 +205,15 @@
                                 <h5>Confirmar contraseña:</h5>
                                 <input type="password" wire:model="user.cpassword" class="form-control" autocomplete="off">
 
-                                {{--  <h5>Rol:</h5>
-                                <select wire:model="user.rol_id" class="form-control" >
-                                    <option value="">Seleccione un rol</option>
-                                    @foreach ($rols as $rol)
-                                        <option value="{{$rol->id}}">{{$rol->name}}</option>
+                                <h5>Area:</h5>
+                                <select wire:model="user.area_id" class="form-control" >
+                                    @foreach ($areas as $area)
+                                        <option value="{{$area->id}}">{{$area->name}}</option>
                                     @endforeach
                                 </select>
-                                @error('user.rol_id')
+                                @error('user.area_id')
                                     <small class="text-danger">Campo Requerido</small>
-                                @enderror  --}}
+                                @enderror
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" wire:click="cancelar()">Cancelar</button>
