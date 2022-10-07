@@ -387,7 +387,7 @@ return [
             'text' => 'Reporte de Asistencias',
             'route'  => 'asistencia.reporte',
             'can'  =>'admin',
-            'icon' => 'fas fa-file-chart-line',
+            'icon' => 'fas fa-chart-bar',
         ],
         
     ],
