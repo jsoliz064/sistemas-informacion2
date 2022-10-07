@@ -362,32 +362,32 @@ return [
             'text' => 'Servicios solicitados',
             'route'  => 'solicitudes.index',
             'can'  =>'empleado',
-            'icon' => 'fas fa-fw fa-user',
+            'icon' => 'fas fa-clipboard-list',
         ],
         
         [
             'text' => 'Solicitar Servicio',
             'route'  => 'cliente.servicio',
             'can'  =>'cliente',
-            'icon' => 'fas fa-fw fa-user',
+            'icon' => 'fas fa-bell',
         ],
         [
             'text' => 'Pagos',
             'route'  => 'pago.index',
             'can'  =>'empleado',
-            'icon' => 'fas fa-fw fa-user',
+            'icon' => 'fas fa-money-check-alt',
         ],
         [
             'text' => 'Asistencias',
             'route'  => 'asistencia.index',
             'can'  =>'admin',
-            'icon' => 'fas fa-fw fa-user',
+            'icon' => 'fas fa-book-open',
         ],
         [
             'text' => 'Reporte de Asistencias',
             'route'  => 'asistencia.reporte',
             'can'  =>'admin',
-            'icon' => 'fas fa-fw fa-user',
+            'icon' => 'fas fa-file-chart-line',
         ],
         
     ],
